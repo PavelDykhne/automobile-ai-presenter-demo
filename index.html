@@ -1,0 +1,112 @@
+<!doctype html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>ИИ-ведущий для автообзоров: демо ролика</title>
+<meta name="description" content="Вертикальный ролик 9:16: ведущий из исходного видео заменён на ИИ-персонажа, русская озвучка и синхронизация губ">
+<meta property="og:title" content="ИИ-ведущий для автообзоров: демо ролика">
+<meta property="og:image" content="media/poster.jpg">
+<style>
+  :root { --bg:#f6f7f8; --card:#fff; --ink:#1b1d1f; --muted:#646b72; --line:#e1e4e8; --accent:#2f6b4f; }
+  * { box-sizing:border-box; }
+  body { margin:0; font:16px/1.55 -apple-system, "Segoe UI", Roboto, Arial, sans-serif; background:var(--bg); color:var(--ink); }
+  .wrap { max-width:1100px; margin:0 auto; padding:0 20px; }
+  header { padding:56px 0 28px; }
+  h1 { font-size:clamp(28px,4vw,40px); line-height:1.15; margin:0 0 14px; font-weight:700; }
+  .lead { font-size:18px; color:var(--muted); max-width:740px; margin:0; }
+  .tags { display:flex; flex-wrap:wrap; gap:8px; margin-top:20px; }
+  .tag { border:1px solid var(--line); background:var(--card); border-radius:999px; padding:5px 12px; font-size:14px; }
+  section { padding:28px 0; }
+  h2 { font-size:24px; margin:0 0 6px; }
+  .sub { color:var(--muted); margin:0 0 20px; }
+  .case { background:var(--card); border:1px solid var(--line); border-radius:16px; padding:20px; margin-bottom:28px; }
+  .steps { display:grid; grid-template-columns: 1fr 1.25fr 1.25fr; gap:18px; align-items:start; }
+  .step figcaption { font-size:13px; text-transform:uppercase; letter-spacing:.06em; color:var(--muted); margin-bottom:8px; }
+  .step img, .step video { width:100%; display:block; border-radius:10px; background:#e9ecef; }
+  .step.sheet img { border:1px solid var(--line); }
+  .step.main video { box-shadow:0 8px 30px rgba(0,0,0,.14); }
+  .sound { display:inline-block; margin-top:8px; font-size:14px; color:var(--accent); }
+  .note { font-size:14px; color:var(--muted); margin:14px 0 0; }
+  .grid2 { display:grid; grid-template-columns:1fr 1fr; gap:18px; }
+  .box { background:var(--card); border:1px solid var(--line); border-radius:16px; padding:20px 22px; }
+  .box h3 { margin:0 0 10px; font-size:18px; }
+  .box ul { margin:0; padding-left:20px; }
+  .box li { margin:4px 0; }
+  footer { padding:30px 0 50px; color:var(--muted); font-size:14px; }
+  @media (max-width:800px) {
+    .steps { grid-template-columns:1fr 1fr; }
+    .step.sheet { grid-column:1 / -1; }
+    .grid2 { grid-template-columns:1fr; }
+  }
+</style>
+</head>
+<body>
+<div class="wrap">
+
+<header>
+  <h1>ИИ-ведущий для коротких автообзоров</h1>
+  <p class="lead">Беру исходное видео с ведущим, ставлю на его место фирменного персонажа и озвучиваю текст живым мужским голосом на русском. Губы двигаются под слова, лицо, усы, причёска и куртка одинаковые во всех кадрах.</p>
+  <div class="tags">
+    <span class="tag">9:16, 1080×1920</span>
+    <span class="tag">без водяных знаков</span>
+    <span class="tag">русская озвучка</span>
+    <span class="tag">синхронизация губ</span>
+  </div>
+</header>
+
+<section>
+  <h2>Пример</h2>
+  <p class="sub">Демо на 10 секунд. Исходник взял со стока, персонажа нарисовал сам, потому что вашего листа персонажа у меня пока нет.</p>
+
+  <div class="case">
+    <div class="steps">
+      <figure class="step" style="margin:0">
+        <figcaption>Исходное видео</figcaption>
+        <video src="media/source.mp4" poster="media/poster_source.jpg" autoplay muted loop playsinline controls preload="metadata"></video>
+      </figure>
+      <figure class="step main" style="margin:0">
+        <figcaption>Готовый ролик</figcaption>
+        <video src="media/demo.mp4" poster="media/poster.jpg" autoplay muted loop playsinline controls preload="metadata"></video>
+        <span class="sound">Включите звук: в ролике озвучка</span>
+      </figure>
+      <figure class="step sheet" style="margin:0">
+        <figcaption>Лист персонажа</figcaption>
+        <img src="media/character.jpg" alt="Лист персонажа: анфас, три четверти, профиль, в полный рост" loading="lazy">
+      </figure>
+    </div>
+    <p class="note">Текст: «Привет! Мы в автосалоне, и вот что скажу сразу: новая оптика, фирменная решётка и цена ниже, чем у конкурентов. Сейчас разберёмся, стоит ли брать». Голос из библиотеки ElevenLabs, нативный русский. Персонаж смотрит в камеру, жестикулирует и переминается с ноги на ногу, сцена и ракурс взяты из исходника.</p>
+  </div>
+</section>
+
+<section>
+  <div class="grid2">
+    <div class="box">
+      <h3>Как делаю ролик</h3>
+      <ul>
+        <li>По листу персонажа ставлю его в первый кадр вашего исходника: та же поза, тот же салон.</li>
+        <li>Движение генерирую в Kling 3.0 Pro с привязкой лица к листу персонажа, чтобы внешность не плыла.</li>
+        <li>Озвучка: ElevenLabs (голос из библиотеки или клон с согласия владельца) либо живой диктор.</li>
+        <li>Губы подгоняю под озвучку в sync-3, это отдельная модель для дубляжа.</li>
+        <li>Длинный ролик собираю из нескольких кусков по 10–15 секунд со склейкой по планам.</li>
+      </ul>
+    </div>
+    <div class="box">
+      <h3>Что учитываю</h3>
+      <ul>
+        <li>Ударения в русском тексте проверяю на слух и правлю до генерации губ.</li>
+        <li>Машина должна остаться настоящей. Если генерация искажает решётку, фары или номер, ставлю в монтаж план с машиной из исходника, номер закрываю.</li>
+        <li>Каждый ролик смотрю со звуком перед сдачей. Брак переделываю сам.</li>
+        <li>Отдаю mp4 H.264, 1080×1920, AAC, без водяных знаков.</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<footer>
+  Демо подготовлено для отклика на заказ «Короткие вертикальные ролики с ИИ-персонажем про автомобили». Исходное видео: Pexels (бесплатная лицензия), персонаж и озвучка сделаны для примера.
+</footer>
+
+</div>
+</body>
+</html>
